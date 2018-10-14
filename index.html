@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="toggle.css">
     <link rel="stylesheet" href="lib/material-design-icons/css/material-icons.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 </head>
 <body class="overflow-hidden">
 <div class="overlay">
@@ -23,8 +24,25 @@
     <button class="navbar-toggler no-outline" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse my-1" id="navbarToggler">
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a tabindex="0"
+                   class="nav-link pointer"
+                   data-placement="bottom"
+                   data-toggle="popover"
+                   data-container="body"
+                   data-animation="true"
+                   data-template='<div class="popover bg-dark" role="tooltip"><div class="arrow"></div><h3 class="popover-header bg-dark text-light"></h3><div class="popover-body text-light"></div></div>'
+                   data-content="This visualisation of murders over time in NYC consists of a timeline that displays the number of murders per day from 2006 to 2016, a map displaying their locations, and a bar chart displaying their hourly distribution. The timeline, map and bar chart are each brushable to enable filtering of the murders and are all cross-filtered using  crossfilter.js  for the ultimate cross-filter experience. Press the play button to start a little animation of the murder development through time. Alternatively look at the minimum implementation that doesn't rely on crossfilter.js and also includes all days without reported murders into the timeline.">
+                    about
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://github.com/Sn0oze/NYC-Crimes" target="_blank">
+                    <i class="fab fa-github mdi-lg"></i>
+                </a>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="mdi mdi-settings mdi-lg"></i>
@@ -43,7 +61,7 @@
         </ul>
     </div>
 </nav>
-<section style="padding-top: 56px">
+<section style="padding-top: 59px">
     <div id="vizContainer">
         <div class="container">
             <div class="row justify-content-center mt-5">
@@ -71,8 +89,14 @@
 <script src="lib/jquery-3.3.1.slim.min.js"></script>
 <script src="lib/popper.min.js"></script>
 <script src="lib/bootstrap-4.1.0-dist/js/bootstrap.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.4.1/js/all.js" integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7" crossorigin="anonymous"></script>
 <script src="lib/d3/d3.min.js"></script>
 <script src="lib/crossfilter.min.js"></script>
 <script src="app.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    });
+</script>
 </body>
 </html>

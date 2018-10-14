@@ -248,3 +248,11 @@ a:hover{
 dd > ul{
     margin: 1rem 0;
 }
+
+.pointer{
+    cursor: pointer;
+}
+
+.outline-light{
+    border-color: white;
+}
